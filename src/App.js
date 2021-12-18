@@ -3,7 +3,7 @@ import './App.css';
 
 const ipfsClient = require("ipfs-http-client");
  
-const ipfs = ipfsClient("http://localhost:3000/ipfs/QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc");
+const ipfs = ipfsClient("http://localhost:8080/ipfs/QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc");
 const ver = await ipfs.version();
 console.log ("IPFS Version=", ver);
 
