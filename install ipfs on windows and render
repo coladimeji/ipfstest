@@ -1,0 +1,28 @@
+On Windows
+Downlload ipfs
+save in a folder
+Bbrowse to where you save go-ipfs_v0.11.0_windows-amd64
+ click allow access on the defebder firewall pop up propmt
+ go to addrees bar and insert http://localhost:8080/ipfs/QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc/readme
+click enter
+ If you are seeing this you have seccesfully downloaded IPFS should pop up
+  Go to vs code to configure web interface
+  Open new terminal/  npx create-react-app ipfstest
+  type yes to download pop up window
+  Verify to see if the packages were downloaded properly.
+  install additional resources -npm install --save ipfs-http-client
+   Go to src and ope App.js instert: 
+ const ipfsClient = require("ipfs-http-client");
+ const ipfs = ipfsClient("http://localhost:8080");
+const ver = await ipfs.version();
+console.log ("IPFS Version=", ver);
+ go back to src and create add file
+then insert
+var hash = ""
+for await (const result of ipfs.add(this.state.buffer)) {
+console.log(result)
+hash = result.path
+}
+ check to see if ifps is working by inserting you hash
+http://localhost:8080/ipfs/QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc
+ now tun on react browser
